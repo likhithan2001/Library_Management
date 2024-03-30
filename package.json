@@ -1,0 +1,24 @@
+{
+    "name": "library_managemet",
+    "version": "1.0.0",
+    "description": "Book record management",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/likhithan2001/Library_Management.git"
+    },
+    "author": "Likhitha",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/likhithan2001/Library_Management/issues"
+    },
+    "homepage": "https://github.com/likhithan2001/Library_Management#readme",
+    "dependencies": {
+        "express": "^4.19.2",
+        "nodemon": "^3.1.0"
+    }
+}
