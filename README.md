@@ -80,7 +80,22 @@ GET: Get all issued books
 GET:Get all issed books with their fine
 
 ## npm init
-## npm install nodemon --save-dev
+## npm install nodemon --save-dev -> npm run dev
+
+...each 
+    "name": "Jane",
+    "surname": "Doe",
+    "email": "user@email.com",
+    "subscriptionType": "Premium",
+    "subscriptionDate": "01/01/2024"
+
+...data 
+    {
+  "data":{
+    "name":"likhitha",
+    "surname":"N"
+  }
+}
 
 
 
