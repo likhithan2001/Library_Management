@@ -72,8 +72,96 @@ router.get("/:id", (req, res) => {
     });
 });
 
+/**
+ * Route :/
+ * Method:post
+ * Description: Adding a new book
+ * Access:Public
+ * Parameters:none
+ * Data :id, name ,genre, price, publisher, author
+ */
+router.post("/", (req, res) => {
+    const { data } = req.body;
+    if (!data) {
+        return res.status(400).json({
+            success: false,
+            message: "No Data to Add A Book",
+        });
+    }
+    const book = books.find((each) => each.id === data.id);
+    if (book) {
+        return res.status(404).json({
+            success: false,
+            message: "id Already Exists !!"
+        })
+    }
+    const allBooks = {...books, data };
+    return res.status(201).json({
+        success: true,
+        message: "Added Book successfully",
+        data: allBooks,
+    })
+});
 
+/**
+ * Route :/:id
+ * Method:put
+ * Description: updating a book by its id
+ * Access:Public
+ * Parameters:id
+ * Data :id, name ,genre, price, publisher, author
+ */
+router.put("/updateBook/:id", (req, res) => {
+    const { id } = req.params;
+    const { data } = req.body;
 
+    const book = books.find((each) => each.id === id)
+    if (!book) {
+        return res.status(404).json({
+            success: false,
+            message: "Book not found for this Id"
+        });
+    }
+    const updateData = books.map((each) => {
+        if (each.id === id) {
+            return {...each, ...data };
+        }
+        return each;
+    });
+    return res.status(200).json({
+        success: true,
+        message: "updated a Book By their id",
+        data: updateData,
+    })
+
+})
+
+// router.put("/updateBook/:id", (req, res) => {
+//     const { id } = req.params;
+//     const { data } = req.body;
+
+//     const book = users.find((each) => each.id === id);
+//     if (!book) {
+//         return res.status(404).json({
+//             success: false,
+//             message: "Book does not exist",
+//         });
+//     }
+//     const updateBookData = users.map((each) => {
+//         if (each.id === id) {
+//             return {
+//                 ...each, //each and everything in the field
+//                 ...data, //geting it from the body (request)
+//             };
+//         }
+//         return each;
+//     });
+//     return res.status(200).json({
+//         success: true,
+//         message: "Book Updated",
+//         data: updateBookData
+//     })
+// });
 
 
 
