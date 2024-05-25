@@ -99,5 +99,10 @@ GET:Get all issed books with their fine
 
 
 
-WV7x6JiQJBV8sgk5
-nlikhitha63
+MVC Arch => 
+ >> M: Modal (It depicts the structure of a mongodb collection)
+ >> V: View (wrt to frontend (reactjs)
+ >> c: Controllers (Brain or logical part of a route)
+   >> books.controllers.js
+   >> users.controllers.js
+   )

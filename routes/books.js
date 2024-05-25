@@ -2,7 +2,11 @@ const express = require("express");
 const { books } = require("../data/books.json");
 const { users } = require("../data/users.json");
 
+
+
 const router = express.Router();
+
+const { UserModel, BookModel } = require("../modals/index");
 
 /**
  * Route :/books
